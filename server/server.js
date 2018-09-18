@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
-const { mongoose } = require('./db');
+const { mongoose } = require("./db");
 const { User } = require("./models/user");
 const { Todo } = require("./models/todo");
 
@@ -18,8 +18,10 @@ app.post("/todos", (req, res) => {
     }, e => {
         res.status(400).send(e)
     });
-})
+});
 
 app.listen(3000, () => {
     console.log("Server is running on port 3000");
-})
+});
+
+module.exports = { app };
